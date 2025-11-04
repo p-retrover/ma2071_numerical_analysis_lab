@@ -1,0 +1,11 @@
+# IDE and editor specific files
+.vscode/
+
+# Compiled files
+*.out
+*.o
+
+# Executables from the classes
+# Ignore all files in class_* directories that don't have an extension
+class_*/*
+!class_*/*.*
