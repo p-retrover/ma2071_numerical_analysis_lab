@@ -61,6 +61,8 @@ b = 1
 */
 ```
 
+![Bisection Method](screenshots/1.png)
+
 ## Secant Method
 
 ```cpp
@@ -114,6 +116,8 @@ x2 = 1
 E = 1e-7
 */
 ```
+
+![Secant Method](screenshots/2.png)
 
 ## Newton-Raphson Method
 
@@ -191,6 +195,8 @@ For example:
 */
 ```
 
+![Newton-Raphson Method](screenshots/3.png)
+
 ## Fixed Point Method
 
 ```cpp
@@ -239,6 +245,8 @@ This program does not take any user input. The initial value for the fixed-point
 x = 2.5
 */
 ```
+
+![Fixed Point Method](screenshots/4.png)
 
 ## Gauss Elimination Method
 
@@ -323,6 +331,8 @@ For example, for a 2x2 system:
 3 2 8
 */
 ```
+
+![Gauss Elimination Method](screenshots/5.png)
 
 ## Gauss Elimination Method (Original)
 
@@ -411,6 +421,8 @@ For example, for a 2x2 system:
 */
 ```
 
+![Gauss Elimination Method (Original)](screenshots/6.png)
+
 ## Lagrange Interpolation
 
 ```cpp
@@ -469,6 +481,8 @@ For example:
 2.5
 */
 ```
+
+![Lagrange Interpolation](screenshots/7.png)
 
 ## Newton's Divided Difference
 
@@ -534,6 +548,8 @@ For example:
 2.5
 */
 ```
+
+![Newton's Divided Difference](screenshots/8.png)
 
 ## Newton's Forward Difference
 
@@ -601,6 +617,8 @@ For example:
 2.5
 */
 ```
+
+![Newton's Forward Difference](screenshots/9.png)
 
 ## Power Method
 
@@ -690,6 +708,8 @@ For example:
 */
 ```
 
+![Power Method](screenshots/10.png)
+
 ## Euler's Method
 
 ```cpp
@@ -735,6 +755,8 @@ For example:
 0.5
 */
 ```
+
+![Euler's Method](screenshots/11.png)
 
 ## RK2 System
 
@@ -798,3 +820,5 @@ For example:
 0.5
 */
 ```
+
+![RK2 System](screenshots/11.png)
