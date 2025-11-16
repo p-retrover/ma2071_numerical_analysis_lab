@@ -2,21 +2,20 @@
 \usepackage{amsmath}
 \usepackage{geometry}
 \usepackage{graphicx}
+\usepackage{mathptmx} % Times font
 \geometry{a4paper, margin=1in}
 \usepackage{listings}
 \usepackage{xcolor}
 
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegray}{gray}{0.5}
+\definecolor{backcolour}{gray}{1}
 
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
+    commentstyle=\itshape\color{codegray},
+    keywordstyle=\bfseries,
     numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
+    stringstyle=\color{black},
     basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,         
     breaklines=true,                 
@@ -27,7 +26,11 @@
     showspaces=false,                
     showstringspaces=false,
     showtabs=false,                  
-    tabsize=2
+    tabsize=2,
+    frame=single,
+    framesep=3pt,
+    framerule=0.5pt,
+    rulecolor=\color{black}
 }
 
 \lstset{style=mystyle}
@@ -100,7 +103,7 @@ a = 0
 b = 1
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/1.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/1.png}\end{center}
 
 \subsection*{Secant Method}
 \begin{lstlisting}[language=C++]
@@ -154,7 +157,7 @@ x2 = 1
 E = 1e-7
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/2.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/2.png}\end{center}
 
 \subsection*{Newton-Raphson Method}
 \begin{lstlisting}[language=C++]
@@ -168,10 +171,10 @@ double f1(double x, double y) { return pow(x, 3) + y - 1; }
 double f2(double x, double y) { return pow(y, 3) - x + 1; }
 
 // Partial derivatives (Jacobian)
-double f1x(double x, double y) { return 3 * x * x; }  // ∂f1/∂x
-double f1y(double x, double y) { return 1; }          // ∂f1/∂y
-double f2x(double x, double y) { return -1; }         // ∂f2/∂x
-double f2y(double x, double y) { return 3 * y * y; }  // ∂f2/∂y
+double f1x(double x, double y) { return 3 * x * x; }  // \textdegree f1/\textdegree x
+double f1y(double x, double y) { return 1; }          // \textdegree f1/\textdegree y
+double f2x(double x, double y) { return -1; }         // \textdegree f2/\textdegree x
+double f2y(double x, double y) { return 3 * y * y; }  // \textdegree f2/\textdegree y
 
 int main() {
     cout << "Newton's Method for solving system of equations\n";
@@ -230,7 +233,7 @@ For example:
 0.5
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/3.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/3.png}\end{center}
 
 \subsection*{Fixed Point Method}
 \begin{lstlisting}[language=C++]
@@ -279,7 +282,7 @@ This program does not take any user input. The initial value for the fixed-point
 x = 2.5
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/4.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/4.png}\end{center}
 
 \subsection*{Gauss Elimination Method}
 \begin{lstlisting}[language=C++]
@@ -357,13 +360,13 @@ int main() {
 
 /*
 This program expects the user to input the number of equations and the coefficients of the augmented matrix.
-For example, for a 2x2 system:
+For example:
 2
 2 1 5
 3 2 8
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/5.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/5.png}\end{center}
 
 \subsection*{Lagrange Interpolation}
 \begin{lstlisting}[language=C++]
@@ -422,7 +425,7 @@ For example:
 2.5
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/6.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/6.png}\end{center}
 
 \subsection*{Newton's Divided Difference}
 \begin{lstlisting}[language=C++]
@@ -487,7 +490,7 @@ For example:
 2.5
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/7.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/7.png}\end{center}
 
 \subsection*{Newton's Forward Difference}
 \begin{lstlisting}[language=C++]
@@ -554,7 +557,7 @@ For example:
 2.5
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/8.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/8.png}\end{center}
 
 \subsection*{Power Method}
 \begin{lstlisting}[language=C++]
@@ -615,12 +618,6 @@ int main() {
             x[i] = y[i] / y_norm;
 
         cout << iter << "\t" << lambda_new << endl;
-
-        // Check convergence
-        if (fabs(lambda_new - lambda_old) < tol)
-            break;
-
-        lambda_old = lambda_new;
     }
 
     cout << "\nDominant Eigenvalue ≈ " << lambda_new << endl;
@@ -642,7 +639,7 @@ For example:
 1 1 1
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/9.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/9.png}\end{center}
 
 \subsection*{Euler's Method}
 \begin{lstlisting}[language=C++]
@@ -688,7 +685,7 @@ For example:
 0.5
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/10.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/10.png}\end{center}
 
 \subsection*{RK2 System}
 \begin{lstlisting}[language=C++]
@@ -751,6 +748,6 @@ For example:
 0.5
 */
 \end{lstlisting}
-\includegraphics[width=0.8\textwidth]{screenshots/11.png}
+\begin{center}\includegraphics[width=0.8\textwidth]{screenshots/11.png}\end{center}
 
 \end{document}
